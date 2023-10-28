@@ -11,7 +11,7 @@ spec:
   - host: app.ostepopp.site
     http:
       paths:
-      - path: /hellokube
+      - path: "/hellokube(/|$)(.*)"
         pathType: Prefix
         backend:
           service:
