@@ -14,6 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: hellokube
+            name: hellokube-service
             port:
               number: 80
