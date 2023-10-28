@@ -32,3 +32,6 @@ jobs:
         clusterName: k8s-bergen
         namespace: apps
         personalAccessToken: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+
+    - name: Kube Apply
+      run: kubectl apply -f ./deployment.yml
