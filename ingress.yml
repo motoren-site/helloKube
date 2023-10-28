@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hellokube-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: hellokube
+  rules:
+  - http:
+      paths:
+      - path: /hellokube
+        pathType: Prefix
+        backend:
+          service:
+            name: hellokube
+            port:
+              number: 80
