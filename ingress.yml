@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: hellokube
   rules:
-  - host: app.motoren.site
+  - host: app.ostepopp.site
     http:
       paths:
       - path: /hellokube
