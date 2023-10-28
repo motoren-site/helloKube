@@ -5,7 +5,7 @@ metadata:
   namespace: apps
 spec:
   selector:
-    app.kubernetes.io/name: proxy
+    app.kubernetes.io/name: hellokube
   ports:
   - name: hellokube-port
     protocol: TCP
