@@ -1,0 +1,23 @@
+name: Deploy to Kubernetes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to DigitalOcean Kubernetes
+      uses: matootie/dokube@v1.3.4
+      with:
+        method: apply
+        file: ./deployment.yml 
+        cluster: k8s-bergen
+        space: registry.digitalocean.com/containers
+        token: ${{ secrets.DIGITAL_OCEAN_TOKEN }}

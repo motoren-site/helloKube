@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellokube-deployment
+  namespace: apps
+  labels:
+    app: hellokube
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hellokube
+  template:
+    metadata:
+      labels:
+        app: hellokube
+    spec:
+      containers:
+      - name: hellokube
+        image: registry.digitalocean.com/containers/hellokube:latest
+        ports:
+        - containerPort: 3000
